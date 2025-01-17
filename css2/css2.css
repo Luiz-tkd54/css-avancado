@@ -1,0 +1,280 @@
+/* AULA 1 -----------------------------  ------------------------------------------------ */
+@keyframes animacao{
+    from{
+        background-color: red;
+    }
+    to{
+        background-color: yellow;
+    }
+}
+
+
+.animation-div{
+    height: 100px;
+    width: 100px;
+    background-color: red;
+    animation-name: animacao;
+    animation-duration: 5s;
+}
+
+/* AULA 2 -----------------------------  ------------------------------------------------ */
+
+@keyframes animation2{
+    0%{}
+    30%{width: 100px;}
+    60%{left: 100px; background-color: blue;}
+    80%{background-color: brown;}
+    100%{height: 100px;}
+}
+
+
+.animation-div2{
+    width: 200px;
+    height: 200px;
+    background-color: black;
+    animation-name: animation2;
+    animation-duration: 6s;
+    position:relative;
+}
+
+/* AULA 3 ------------------------------------------------------------------------------------ */
+/* Delay e iteration */
+
+@keyframes animation3{
+   
+    from{left: 0px; }
+    to{left: 150px; background-color: aqua;}
+}
+.animation-div3{
+    width: 100px;
+    height: 100px;
+    background-color: purple;
+    position: relative;
+    animation-name: animation3;
+    animation-duration: 3s;
+    animation-delay: 2s;
+    /* tem como contar quantas vez vai animar 
+    exemplo 3 vezes ou infinito */
+    animation-iteration-count: infinite ;
+}
+
+.box{
+    background-color: orange;
+    width: 50px;
+    height: 50px;
+    position: relative;
+    animation-name: animation4;
+    animation-duration: 4s;
+    animation-iteration-count: infinite;
+}
+
+@keyframes animation4{
+    from{left: 0;}
+    to{left: 500px;}
+}
+
+#animation-div4{
+    /* PERCURSO INTEIRO NA MSM VELOCIDADE  */
+    animation-timing-function: linear;
+}
+
+#animation-div5{
+    /* COMEÇA RAPIDO E FICA LENTO  */
+    animation-timing-function: ease;
+    
+}
+
+#animation-div6{
+    /* COMEÇA LENTO E FICA RAPIDO */
+    animation-timing-function: ease-in;
+    
+}
+
+#animation-div7{
+    /* COMEÇA RAPIDO E FICA LENTO */
+    animation-timing-function: ease-out;
+    
+}
+
+#animation-div8{
+    /* COMEÇA LENTO FICA RAPIDO E LENDO DENOVO, */
+    animation-timing-function: ease-in-out;
+    
+}
+
+/* SHORTHAND nada mais é q resumir codigo em uma linha */
+
+@keyframes animation5{
+
+    0%{left: 0;}
+    40%{left: 20px; background-color: green;color: black;}
+    60%{left: 40px; background-color: aqua; color: white;}
+    80%{left: 60px; background-color: blue;}
+    100%{left: 100px; background-color: blueviolet;}
+
+}
+
+#animation-div9{
+    width: 150px;
+    height: 150px;
+    /* shorthand | nome, duração, time-function, delay, iteration */
+    animation: animation5 8s ease-out 4s infinite;
+}
+
+/* AULA 4 TRANSITION ------------------------------------------------------------------------------------ */
+
+.btn{
+    display: block;
+    background-color: #7e00fc;
+    color: #FFF;
+    font-weight: bold;
+    height: 40px;
+    width: 150px;
+    padding: 10px;  
+    border-radius: 20px;
+    border: 1px solid ;
+    margin: 20px;
+    /* demora a transicao */
+    transition: .5s;
+}
+
+.btn:hover{
+    background-color: #d1d1d1;
+    border-color: 1px solid transparent;
+    color: #7e00fc;
+}
+
+.transition{
+    width: 30px;
+    height: 50px;
+    background-color: black;
+    transition: 1s;
+}
+
+.transition:hover{
+    width: 300px;
+
+}
+
+/* AULA 5 calc --------------- ------------------------------------------------------------------------------------ */
+
+
+.div-calc{
+    width: 500px;
+    height: 250px;
+    position: relative;
+    margin: 20px;
+    background-color: #DDD;
+    border: 1px solid red;
+}
+
+.innerdiv-cal{
+    height: 50px;
+    margin: 10px;
+    background-color: red;
+    position: relative;
+
+}
+
+.calc1{
+    /* se 100% = 500 pois ta relativo a classe pai 
+    50% = 250 + 50 = 300px */
+    width: calc(50% + 50px) ;
+}
+.cal0c2{
+    /* = 200px*/
+    width: calc(50% - 50px);   
+
+}
+.calc3{
+    /* = 500px */
+    width:(50% * 2);
+    margin: 0;
+
+}
+.calc4{
+    /* 125 px */
+    width: calc(50% / 2  );
+
+}
+
+/* AULA 6 GRADIENTE LINEAR --------------- ------------------------------------------------------------------------------------ */
+
+.gradient-box{
+    width: 500px;
+    height: 200px;
+    position: relative;
+    margin: 20px;
+}
+
+.gradient1{
+    background-image: linear-gradient(purple, blue) ;
+}
+.gradient2{
+    background-image: linear-gradient(to right, purple, blue) ;
+    
+}
+.gradient3{
+    background-image: linear-gradient(to left, red, yellow) ;
+    
+}
+.gradient4{
+    background-image: linear-gradient(to top, red, yellow) ;
+    
+}
+.gradient5{
+    background-image: linear-gradient(to top right, purple, yellow) ;
+    
+}
+.gradient6{
+    background-image: linear-gradient(#db1616d7, purple, yellow) ;
+    
+}
+
+/* AULA 6 GRADIENTE RADIAL --------------- ------------------------------------------------------------------------------------ */
+/* começa em elipse quase um circulo e vai espandindo  */
+.gradient7{
+    background-image: radial-gradient(#3a3042, #d89d47, #ff784f);
+}
+.gradient8{
+    background-image: radial-gradient(#3a3042 10%, #d89d47 30%, #ff784f);
+    
+}
+.gradient9{
+    background-image: radial-gradient(circle, #3a3042, #d89d47, #ff784f);
+    
+}
+
+/* AULA 7 FONT FACE --------------- ------------------------------------------------------------------------------------ */
+/* ajuda par aque a fonte que eu escolha seja impressa no navaegador */
+/* para q o usuario veja a font que eu quero q veja  */
+
+/* AULA 8 MEDIA QUERRY -- ------------------------------------------------------------------------------------ */
+
+.mediaquery{
+    height: 200px;
+    width: 1200px;
+    background-color: red;
+}
+
+@media (max-width:1000px) {
+    .mediaquery{
+        width: 500px;
+        background-color: blue;
+    }
+}
+
+
+@media (max-width:768px) {
+    .mediaquery{
+        width: 300px;
+        background-color: rgb(36, 225, 15);
+    }
+}
+
+@media (max-width:512px) {
+    .mediaquery{
+        width: 200px;
+        background-color: blue;}
+ 
+}
